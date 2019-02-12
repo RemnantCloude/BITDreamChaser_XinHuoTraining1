@@ -1,0 +1,180 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/26/2018  21:20:35  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\led.obj TO .\Objects\LED PRINT (.\Listings\LED.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\led.obj (LED)
+
+
+LINK MAP OF MODULE:  .\Objects\LED (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         ?DT?LED
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     005CH     UNIT         ?PR?MAIN?LED
+            CODE    005FH     0024H     UNIT         ?PR?_DELAYMS?LED
+            CODE    0083H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LED (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LED
+
+?PR?MAIN?LED
+  +--> ?PR?_DELAYMS?LED
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LED (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0083H         SEGMENT       ?C_C51STARTUP
+  I:0009H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/26/2018  21:20:35  PAGE 2
+
+
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0086H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0083H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0083H         LINE#         133
+  C:0085H         LINE#         134
+  C:0086H         LINE#         135
+  C:0087H         LINE#         136
+  C:0089H         LINE#         185
+  C:008CH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        LED
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  B:0090H.3       PUBLIC        c1
+  B:0090H.2       PUBLIC        c2
+  B:0090H.1       PUBLIC        c3
+  B:0090H.0       PUBLIC        c4
+  D:00B8H         PUBLIC        IP
+  B:0090H.7       PUBLIC        r1
+  B:0090H.6       PUBLIC        r2
+  B:0090H.5       PUBLIC        r3
+  B:0090H.4       PUBLIC        r4
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        led
+  D:00C8H         PUBLIC        T2CON
+  C:0063H         PUBLIC        _delayms
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         27
+  C:0003H         LINE#         28
+  C:0005H         LINE#         29
+  C:0007H         LINE#         30
+  C:0009H         LINE#         31
+  C:000BH         LINE#         32
+  C:000EH         LINE#         33
+  C:000EH         LINE#         34
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/26/2018  21:20:35  PAGE 3
+
+
+  C:0011H         LINE#         35
+  C:0014H         LINE#         36
+  C:0017H         LINE#         37
+  C:001AH         LINE#         38
+  C:001DH         LINE#         39
+  C:0024H         LINE#         40
+  C:0024H         LINE#         41
+  C:0024H         LINE#         42
+  C:0027H         LINE#         43
+  C:002AH         LINE#         44
+  C:002DH         LINE#         45
+  C:0030H         LINE#         46
+  C:0037H         LINE#         48
+  C:0037H         LINE#         49
+  C:0037H         LINE#         50
+  C:003AH         LINE#         51
+  C:003AH         LINE#         52
+  C:003DH         LINE#         53
+  C:0040H         LINE#         54
+  C:0040H         LINE#         55
+  C:0043H         LINE#         56
+  C:004AH         LINE#         57
+  C:004AH         LINE#         58
+  C:004AH         LINE#         59
+  C:004DH         LINE#         60
+  C:004DH         LINE#         61
+  C:0050H         LINE#         62
+  C:0053H         LINE#         63
+  C:0053H         LINE#         64
+  C:0056H         LINE#         65
+  C:005DH         LINE#         66
+  C:005DH         LINE#         67
+  C:005DH         LINE#         68
+  -------         ENDPROC       MAIN
+  C:005FH         SYMBOL        L?0022
+  -------         PROC          L?0021
+  -------         ENDPROC       L?0021
+  C:005FH         SYMBOL        L?0022
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0063H         LINE#         71
+  C:0063H         LINE#         72
+  C:0063H         LINE#         74
+  C:006DH         LINE#         75
+  C:006DH         LINE#         76
+  C:007BH         LINE#         77
+  C:0082H         LINE#         78
+  -------         ENDPROC       _DELAYMS
+  -------         ENDMOD        LED
+
+Program Size: data=10.0 xdata=0 code=143
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

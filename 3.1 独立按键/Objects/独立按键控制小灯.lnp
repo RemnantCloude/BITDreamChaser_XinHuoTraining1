@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\key2led.obj" 
+TO ".\Objects\独立按键控制小灯" 
+PRINT(".\Listings\独立按键控制小灯.m51") RAMSIZE(256) 

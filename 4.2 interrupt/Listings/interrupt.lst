@@ -1,0 +1,53 @@
+C51 COMPILER V9.59.0.0   INTERRUPT                                                         11/02/2018 14:01:53 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE INTERRUPT
+OBJECT MODULE PLACED IN .\Objects\interrupt.obj
+COMPILER INVOKED BY: F:\Keil_MDK\C51\BIN\C51.EXE interrupt.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\interrupt.lst) OBJECT(.\Objects\interrupt.obj)
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit led1 = P2^0;
+   4          sbit k3 = P3^2;
+   5          
+   6          void delay_10ms()   //延时函数
+   7          {
+   8   1              unsigned int i, j;
+   9   1              for(i = 10; i>0; i--)
+  10   1                      for(j = 110; j>0; j--);
+  11   1      }
+  12          
+  13          
+  14          void main()
+  15          {
+  16   1              EA = 1;                 //总中断使能
+  17   1              EX0 = 1;                //外部中断0使能
+  18   1              IT0 = 1;                //触发方式为下降沿触发
+  19   1              while(1);
+  20   1      }
+  21          
+  22          void OutInterrupt0() interrupt 0                //外部中断0服务函数
+  23          {
+  24   1              delay_10ms();   //软件消抖
+  25   1              if(k3 == 0)             //k3默认为高电平1，1 -> 0产生下降沿触发
+  26   1              {
+  27   2                      led1 = ~led1;
+  28   2              }
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     71    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
